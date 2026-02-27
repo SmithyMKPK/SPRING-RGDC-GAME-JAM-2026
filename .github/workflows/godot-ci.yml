@@ -73,6 +73,7 @@ jobs:
       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
       ITCH_USER: ${{ secrets.ITCH_USER }}
       ITCH_GAME: ${{ secrets.ITCH_GAME }}
+    if: ${{ (github.repository_owner) == 'geekazodium'}} 
     needs:
       export-web
     steps: 
