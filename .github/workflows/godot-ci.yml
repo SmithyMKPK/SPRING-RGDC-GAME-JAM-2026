@@ -33,7 +33,7 @@ permissions:
 env:
   GODOT_VERSION: 4.6.1
   EXPORT_NAME: idk-the-name-for-now
-  PROJECT_PATH: /
+  PROJECT_PATH: ./
   EXPORT_BRANCH: gh-pages
 
 jobs:
