@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dgcipuukabiu3"]
+
+[ext_resource type="FontFile" uid="uid://cnqy0ca0e0jj6" path="res://assets/typefaces/Cairopixel.ttf" id="1_dg02v"]
+[ext_resource type="Script" uid="uid://cbclcm1cmlaj6" path="res://menu_scenes/main_menu.gd" id="1_kwrte"]
+[ext_resource type="PackedScene" uid="uid://ccvmanekwtydl" path="res://menu_scenes/options_menu.tscn" id="3_0nmaq"]
+[ext_resource type="PackedScene" uid="uid://bpf71ifns3ocu" path="res://menu_scenes/level_selection_menu.tscn" id="4_xnuoq"]
+
+[node name="Main Menu" type="Control" unique_id=2037886259]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kwrte")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1944835148]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=978129503]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=746805796]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dg02v")
+theme_override_font_sizes/font_size = 72
+text = "Ah Yes, 
+The Clueless Game"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=1310971925]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Play Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1314158167]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dg02v")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="Options Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=101733274]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dg02v")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Quit Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2076021367]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dg02v")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="Options Menu" parent="CenterContainer" unique_id=496063839 instance=ExtResource("3_0nmaq")]
+visible = false
+layout_mode = 2
+
+[node name="Level Selection Menu" parent="CenterContainer" unique_id=493822413 instance=ExtResource("4_xnuoq")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]

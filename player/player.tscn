@@ -7,3 +7,6 @@
 script = ExtResource("1_g1dw6")
 
 [node name="Moveable Character" parent="." unique_id=1317433075 instance=ExtResource("2_rkbax")]
+
+[node name="Background Music" type="AudioStreamPlayer" parent="." unique_id=1807426507]
+autoplay = true
