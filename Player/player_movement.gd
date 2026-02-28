@@ -1,6 +1,9 @@
 class_name PlayerMovement extends CharacterBody2D
 
 @export var speed: float = 150;
+@export var dead_zone: float = .06;
+
+@export var animation_tree: AnimationTree;
 
 @export var sprite: Node2D
 
@@ -20,6 +23,10 @@ func _physics_process(_delta: float) -> void:
 		Input.get_action_strength("Move Right") - Input.get_action_strength("Move Left"),
 		Input.get_action_strength("Move Down") - Input.get_action_strength("Move Up")
 	).normalized()
+	if input_direction.length() < self.dead_zone:
+		input_direction = Vector2.ZERO;
+	
+	self.animation_tree.set("parameters/conditions/walking", input_direction != Vector2.ZERO);
 	
 	if input_direction.x < 0:
 		self.facing_left = true;
