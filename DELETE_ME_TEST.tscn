@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://ck5fkqlckbekn"]
-
-[ext_resource type="Texture2D" uid="uid://ucdg6b2ecag8" path="res://icon.svg" id="1_t1og3"]
-
-[node name="DELETE ME" type="Node2D" unique_id=1852045243]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1674461582]
-position = Vector2(478, 250)
-texture = ExtResource("1_t1og3")

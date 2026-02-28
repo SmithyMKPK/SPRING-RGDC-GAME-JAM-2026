@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ctfegbv4gvfln"]
+
+[ext_resource type="Script" uid="uid://dqhvr513nhgyt" path="res://player/player_movement.gd" id="1_rte7y"]
+[ext_resource type="Texture2D" uid="uid://ucdg6b2ecag8" path="res://icon.svg" id="2_fyfjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vbj4"]
+size = Vector2(114, 114)
+
+[node name="Moveable Character" type="CharacterBody2D" unique_id=1317433075]
+script = ExtResource("1_rte7y")
+
+[node name="Player Icon" type="Sprite2D" parent="." unique_id=1292958149]
+texture = ExtResource("2_fyfjg")
+
+[node name="Player Hurtbox" type="CollisionShape2D" parent="." unique_id=788408295]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_5vbj4")

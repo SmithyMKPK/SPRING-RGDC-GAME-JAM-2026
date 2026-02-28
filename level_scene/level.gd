@@ -17,12 +17,14 @@ func _ready() -> void:
 	for child: Node in self.get_children():
 		if child is LightNode:
 			self._light_nodes.append(child)
+	
+	Player.enter_level(Vector2.ZERO)
 
 func _process(_delta: float) -> void:
 	var light_node_distances: Dictionary
 	
 	for light_node: LightNode in self._light_nodes:
-		var light_node_distance: float = PlayerCharacter.global_position.distance_squared_to(light_node.position)
+		var light_node_distance: float = Player.current_position.distance_squared_to(light_node.position)
 		light_node_distances[light_node] = light_node_distance
 	
 	self._closest_light_node = get_closest_light_node(light_node_distances)

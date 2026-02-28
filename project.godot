@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="RGDC-2026-JAM-PROJ"
-run/main_scene="uid://ck5fkqlckbekn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerCharacter="*uid://bat6yj1b58eok"
+Player="*uid://bat6yj1b58eok"
 
 [input]
 
