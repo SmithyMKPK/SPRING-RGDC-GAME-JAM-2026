@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://btc7md5rfjjqr" path="res://light_node/light_node.tscn" id="2_su1p8"]
 [ext_resource type="Script" uid="uid://bqfjpxh61soai" path="res://levels/level_camera.gd" id="3_4dbqp"]
 [ext_resource type="PackedScene" uid="uid://cpbi7f1dco0hi" path="res://spawn_point/spawn_point.tscn" id="4_qo0ko"]
+[ext_resource type="Script" uid="uid://nflqolleiscq" path="res://levels/light/lightsource.gd" id="4_xctyr"]
+[ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="5_8th66"]
 
 [node name="Test Level" type="Node2D" unique_id=2114181627 node_paths=PackedStringArray("following_camera")]
 script = ExtResource("1_cpcrd")
@@ -18,5 +20,10 @@ position = Vector2(1152, 0)
 zoom = Vector2(1.25, 1.25)
 script = ExtResource("3_4dbqp")
 
+[node name="LightSource" type="Node2D" parent="Level Camera" unique_id=1999017947]
+script = ExtResource("4_xctyr")
+global_light_material = ExtResource("5_8th66")
+metadata/_custom_type_script = "uid://nflqolleiscq"
+
 [node name="Spawn Point" parent="." unique_id=795000628 instance=ExtResource("4_qo0ko")]
-position = Vector2(768, 448)
+position = Vector2(-16, 37)

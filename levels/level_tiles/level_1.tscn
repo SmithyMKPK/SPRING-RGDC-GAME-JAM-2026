@@ -1,0 +1,29 @@
+[gd_scene format=4 uid="uid://bb4nf1t7q628j"]
+
+[ext_resource type="TileSet" uid="uid://bml6eq1kgt4t" path="res://assets/tilesets/actual_tile_set.tres" id="1_nmtg7"]
+[ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="1_rn056"]
+[ext_resource type="Script" uid="uid://bxwtr27ewgmjw" path="res://levels/level_tiles/autotiling_layer.gd" id="1_s830x"]
+[ext_resource type="TileSet" uid="uid://dhouok5fqh8uw" path="res://assets/tilesets/data_tile_set.tres" id="3_rn056"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rn056"]
+size = Vector2(100, 100)
+
+[node name="Level1" type="Node2D" unique_id=1673126048]
+
+[node name="AutotilingLayer" type="TileMapLayer" parent="." unique_id=1535095717 node_paths=PackedStringArray("tile_data_source")]
+material = ExtResource("1_rn056")
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAHAAEAAAAAAAEAAAA=")
+tile_set = ExtResource("1_nmtg7")
+script = ExtResource("1_s830x")
+tile_data_source = NodePath("TileDataLayer")
+metadata/_custom_type_script = "uid://bxwtr27ewgmjw"
+
+[node name="TileDataLayer" type="TileMapLayer" parent="AutotilingLayer" unique_id=1857756535]
+tile_set = ExtResource("3_rn056")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1924666660]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=224608911]
+material = ExtResource("1_rn056")
+position = Vector2(-157, 14)
+texture = SubResource("PlaceholderTexture2D_rn056")
