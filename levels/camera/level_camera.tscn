@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dfeya0g6tn2k2"]
+
+[ext_resource type="Script" uid="uid://bqfjpxh61soai" path="res://levels/level_camera.gd" id="1_wjito"]
+[ext_resource type="PackedScene" uid="uid://bfwced8yeu6rc" path="res://levels/waves_3d/waves_background_container.tscn" id="2_5bsm2"]
+[ext_resource type="PackedScene" uid="uid://bfb8btfufy32u" path="res://levels/light/light_source.tscn" id="3_fmu8n"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wjito"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Level Camera" type="Camera2D" unique_id=1371421371]
+script = ExtResource("1_wjito")
+
+[node name="Waves" parent="." unique_id=1483759280 instance=ExtResource("2_5bsm2")]
+texture = SubResource("ViewportTexture_wjito")
+scale_fac = 0.04
+
+[node name="LightSource" parent="." unique_id=515451218 instance=ExtResource("3_fmu8n")]
