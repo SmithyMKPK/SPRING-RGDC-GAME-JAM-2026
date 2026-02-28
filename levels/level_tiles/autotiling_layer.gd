@@ -7,7 +7,7 @@ class_name AutotilingLayer
 
 const TILE_TYPE_DATA_LAYER: String = "tile_type";
 
-var last_rect: Rect2i = Rect2i(0,0,0,0);
+#var last_rect: Rect2i = Rect2i(0,0,0,0);
 
 var packed_tileset_mapping: PackedByteArray = [255, 20, 18, 19, 2, 16, 10, 1, 4, 12, 17, 0, 3, 8, 9, 11];
 
@@ -20,17 +20,9 @@ func _ready() -> void:
 	self.tile_data_source.queue_free();
 
 func update_autotile() -> void:
-	var rect = self.tile_data_source.get_used_rect();
-	rect.grow_side(SIDE_LEFT, 1);
-	rect.grow_side(SIDE_TOP, 1);
-	
-	var last_rect_min: Vector2 = self.last_rect.position;
-	var last_rect_max: Vector2 = self.last_rect.position + self.last_rect.size;
-	
-	self.last_rect = rect;
-	
-	rect = rect.expand(last_rect_min);
-	rect = rect.expand(last_rect_max);
+	var rect: Rect2i = self.tile_data_source.get_used_rect();
+	rect = rect.grow_side(SIDE_LEFT, 1);
+	rect = rect.grow_side(SIDE_TOP, 1);
 	
 	for x in range(rect.position.x, rect.position.x + rect.size.x):
 		for y in range(rect.position.y, rect.position.y + rect.size.y):
@@ -69,4 +61,4 @@ func update_autotile() -> void:
 				self.set_cell(cell);
 				continue;
 			var atlas_pos: Vector2i = self.tileset_mapping_lookup_coords(data_index);
-			self.set_cell(cell,0,atlas_pos);
+			self.set_cell(cell,1,atlas_pos);
