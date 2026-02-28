@@ -1,16 +1,22 @@
 ## A test level to see whether distance can properly distance (or something idk)
 class_name Level extends Node2D
 
+## A reference to the camera that'll be following the player
+@export var following_camera: FollowCamera
+
+## References to each light node in a given level
 var _light_nodes: Array[LightNode]
 
-var _closest_light_node: LightNode
+## Set property that allows the camera's target to be known each frame
+var _closest_light_node: LightNode:
+	set(value):
+		following_camera.target_light_node = value
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child: Node in self.get_children():
 		if child is LightNode:
 			self._light_nodes.append(child)
-
 
 func _process(_delta: float) -> void:
 	var light_node_distances: Dictionary
@@ -20,7 +26,6 @@ func _process(_delta: float) -> void:
 		light_node_distances[light_node] = light_node_distance
 	
 	self._closest_light_node = get_closest_light_node(light_node_distances)
-	$"Closes Light Node Label".text = "Closest Light Node: %s" % [self._closest_light_node.name]
 
 ## Returns the light node that's closest to the player
 func get_closest_light_node(light_node_distances: Dictionary) -> LightNode:

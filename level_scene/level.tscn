@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bg2t5xitg0v7q" path="res://level_scene/level.gd" id="1_xsfn5"]
 [ext_resource type="PackedScene" uid="uid://btc7md5rfjjqr" path="res://light_node/light_node.tscn" id="3_hjoww"]
+[ext_resource type="Script" uid="uid://bqfjpxh61soai" path="res://level_scene/level_camera.gd" id="3_xsfn5"]
 
-[node name="Level Scene" type="Node2D" unique_id=2114181627]
+[node name="Level Scene" type="Node2D" unique_id=2114181627 node_paths=PackedStringArray("following_camera")]
 script = ExtResource("1_xsfn5")
+following_camera = NodePath("Level Camera")
 
 [node name="Light Node" parent="." unique_id=356253661 instance=ExtResource("3_hjoww")]
 position = Vector2(1152, 0)
 
 [node name="Light Node2" parent="." unique_id=731427006 instance=ExtResource("3_hjoww")]
 
-[node name="Closes Light Node Label" type="Label" parent="." unique_id=1507273662]
-offset_left = 616.0
-offset_top = 624.0
-offset_right = 1152.0
-offset_bottom = 647.0
+[node name="Level Camera" type="Camera2D" parent="." unique_id=66409299]
+zoom = Vector2(1.25, 1.25)
+script = ExtResource("3_xsfn5")
