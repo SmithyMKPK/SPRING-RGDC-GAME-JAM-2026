@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b0017oxrla1jx"]
+
+[ext_resource type="PlaneMesh" uid="uid://dvw6nly6dws8h" path="res://levels/waves_3d/waves_mesh.tres" id="1_iltnu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wc1f2"]
+ground_bottom_color = Color(0.6557, 0.710895, 0.83, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_ingxy"]
+sky_material = SubResource("ProceduralSkyMaterial_wc1f2")
+
+[sub_resource type="Environment" id="Environment_mp47t"]
+sky = SubResource("Sky_ingxy")
+tonemap_mode = 2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.08739147, 0.09954708, 0.13102713, 1)
+fog_light_energy = 1.85
+fog_density = 1.0
+fog_depth_curve = 1.86606
+fog_depth_end = 40.0
+adjustment_enabled = true
+
+[node name="3DWavesScene" type="Node3D" unique_id=1066263915]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=916495329]
+environment = SubResource("Environment_mp47t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=13321667]
+transform = Transform3D(-0.874999, 0.0290022, 0.483255, 0.216504, 0.916266, 0.337021, -0.433016, 0.39952, -0.808011, 0, 3, 0)
+light_color = Color(0.74509805, 1, 1, 1)
+light_energy = 1.897
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1098022282]
+mesh = ExtResource("1_iltnu")
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D" unique_id=650728670]
+transform = Transform3D(1, 2.1073426e-08, -2.1073426e-08, 0, 0.70710677, 0.7071068, 2.9802326e-08, -0.7071068, 0.70710677, 0, 15, 17)
+projection = 1
+size = 30.0
