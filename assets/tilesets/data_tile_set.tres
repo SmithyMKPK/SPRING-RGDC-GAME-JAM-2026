@@ -1,3 +1,18 @@
 [gd_resource type="TileSet" format=3 uid="uid://dhouok5fqh8uw"]
 
+[ext_resource type="Texture2D" uid="uid://dj1lp481d5olc" path="res://assets/tilesets/tileset-export-r2.png" id="1_mvxxm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x27p5"]
+texture = ExtResource("1_mvxxm")
+3:0/next_alternative_id = 2
+3:0/0 = 0
+3:0/0/custom_data_0 = 1
+4:0/0 = 0
+4:0/0/custom_data_0 = 1
+1:1/0 = 0
+1:1/0/custom_data_0 = 1
+
 [resource]
+custom_data_layer_0/name = "tile_type"
+custom_data_layer_0/type = 2
+sources/0 = SubResource("TileSetAtlasSource_x27p5")
