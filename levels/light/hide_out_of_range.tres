@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dfn5rpdbdrajg"]
+
+[ext_resource type="Shader" uid="uid://b6ddkcula1eab" path="res://levels/light/hide_out_of_range.gdshader" id="1_bg8hg"]
+
+[resource]
+shader = ExtResource("1_bg8hg")
+shader_parameter/vision_light_source = Vector2(0, 0)
+shader_parameter/max_distance = 300.0
