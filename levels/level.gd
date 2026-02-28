@@ -17,8 +17,6 @@ func _ready() -> void:
 	for child: Node in self.get_children():
 		if child is LightNode:
 			self._light_nodes.append(child)
-	
-	Player.enter_level(Vector2.ZERO)
 
 func _process(_delta: float) -> void:
 	var light_node_distances: Dictionary
