@@ -25,6 +25,7 @@ vec3 compute_vertex_pos(vec3 vertex){
 	vec3 offset = vec3(0);
 	for(float i = 0.; i <= 16.; i+= 1.){
 		float i_fac = i * .3;
+		float wave_time = wave_speed * (1. + exp(-i_fac)) * TIME;
 		vec2 position = vertex.xz * waves_scale.xy;
 		position *= (lowest_freq + i_fac);
 		float theta = i * .45;
@@ -32,11 +33,11 @@ vec3 compute_vertex_pos(vec3 vertex){
 			vec2(cos(theta), sin(theta)),
 			vec2(-sin(theta), cos(theta))
 		);
-		float offset_amount = sin(dot(position, wave_direction) + wave_speed * TIME);
+		float offset_amount = sin(dot(position, wave_direction) + wave_time);
 		offset_amount *= exp(-i_fac) * offset_largest;
 		offset += vec3(0,offset_amount,0);
 		
-		vec2 h_offset= wave_direction * cos(dot(position, wave_direction) + wave_speed * TIME);
+		vec2 h_offset= wave_direction * cos(dot(position, wave_direction) + wave_time);
 		h_offset *= exp(-i_fac) * offset_h_largest;
 		offset += vec3(h_offset.x, 0, h_offset.y);
 	}

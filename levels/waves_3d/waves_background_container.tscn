@@ -8,7 +8,6 @@ viewport_path = NodePath("SubViewport")
 
 [node name="Waves" type="Sprite2D" unique_id=1483759280 node_paths=PackedStringArray("move_with_self")]
 z_index = -2
-scale = Vector2(4, 4)
 texture = SubResource("ViewportTexture_8lcyx")
 script = ExtResource("1_6jm3l")
 move_with_self = NodePath("SubViewport/3DWavesScene/MeshInstance3D")
@@ -16,7 +15,7 @@ move_with_self = NodePath("SubViewport/3DWavesScene/MeshInstance3D")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1343760910]
 own_world_3d = true
 handle_input_locally = false
-size = Vector2i(165, 90)
+size = Vector2i(330, 180)
 render_target_update_mode = 4
 
 [node name="3DWavesScene" parent="SubViewport" unique_id=748698008 instance=ExtResource("1_jibp8")]
