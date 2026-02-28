@@ -8,6 +8,7 @@
 viewport_path = NodePath("SubViewport")
 
 [node name="Level Camera" type="Camera2D" unique_id=1371421371]
+zoom = Vector2(2, 2)
 script = ExtResource("1_wjito")
 
 [node name="Waves" parent="." unique_id=1483759280 instance=ExtResource("2_5bsm2")]
@@ -15,3 +16,4 @@ texture = SubResource("ViewportTexture_wjito")
 scale_fac = 0.04
 
 [node name="LightSource" parent="." unique_id=515451218 instance=ExtResource("3_fmu8n")]
+strength = 150.0
