@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bat6yj1b58eok"]
+
+[ext_resource type="Script" uid="uid://cnueyiygti43h" path="res://player/player.gd" id="1_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://ctfegbv4gvfln" path="res://player/moveable_character.tscn" id="2_rkbax"]
+
+[node name="Player" type="Node2D" unique_id=2013226034]
+script = ExtResource("1_g1dw6")
+
+[node name="Moveable Character" parent="." unique_id=1317433075 instance=ExtResource("2_rkbax")]
+
+[node name="Background Music" type="AudioStreamPlayer" parent="." unique_id=1807426507]
+autoplay = true

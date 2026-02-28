@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://btc7md5rfjjqr"]
+
+[ext_resource type="Script" uid="uid://cqin3pn00ymqm" path="res://light_node/light_node.gd" id="1_mwugj"]
+[ext_resource type="Texture2D" uid="uid://ucdg6b2ecag8" path="res://icon.svg" id="2_wfhyy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i75jt"]
+radius = 64.0
+height = 128.0
+
+[node name="Light Node" type="Area2D" unique_id=356253661 node_paths=PackedStringArray("circle_aoe")]
+script = ExtResource("1_mwugj")
+circle_aoe = NodePath("Area Of Effect")
+
+[node name="Light Icon" type="Sprite2D" parent="." unique_id=1006396296]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(0.375, 0.3125)
+texture = ExtResource("2_wfhyy")
+
+[node name="Area Of Effect" type="CollisionShape2D" parent="." unique_id=1574550412]
+shape = SubResource("CapsuleShape2D_i75jt")
