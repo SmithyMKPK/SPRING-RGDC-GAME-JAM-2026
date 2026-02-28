@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="1_rn056"]
 [ext_resource type="Script" uid="uid://bxwtr27ewgmjw" path="res://levels/level_tiles/autotiling_layer.gd" id="1_s830x"]
 [ext_resource type="TileSet" uid="uid://dhouok5fqh8uw" path="res://assets/tilesets/data_tile_set.tres" id="3_rn056"]
+[ext_resource type="PackedScene" uid="uid://bfb8btfufy32u" path="res://levels/light/light_source.tscn" id="5_3rgvw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rn056"]
 size = Vector2(100, 100)
@@ -30,3 +31,6 @@ material = ExtResource("1_rn056")
 position = Vector2(10.000001, 36)
 scale = Vector2(0.33, 0.33)
 texture = SubResource("PlaceholderTexture2D_rn056")
+
+[node name="LightSource" parent="." unique_id=515451218 instance=ExtResource("5_3rgvw")]
+strength = 80.0
