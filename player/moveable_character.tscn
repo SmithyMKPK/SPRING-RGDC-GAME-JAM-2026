@@ -1,19 +1,24 @@
 [gd_scene format=3 uid="uid://ctfegbv4gvfln"]
 
-[ext_resource type="Script" uid="uid://dqhvr513nhgyt" path="res://player/player_movement.gd" id="1_rte7y"]
-[ext_resource type="Texture2D" uid="uid://ucdg6b2ecag8" path="res://icon.svg" id="2_fyfjg"]
+[ext_resource type="Script" uid="uid://dqhvr513nhgyt" path="res://Player/player_movement.gd" id="1_rte7y"]
+[ext_resource type="SpriteFrames" uid="uid://7kvgin5h72xe" path="res://assets/character_sprite_sheets/sherlock_frames.tres" id="2_rte7y"]
 [ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="2_ywcaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vbj4"]
-size = Vector2(9, 9)
+size = Vector2(16, 16)
 
-[node name="Moveable Character" type="CharacterBody2D" unique_id=1317433075]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1317433075 node_paths=PackedStringArray("sprite")]
+collision_mask = 17
 script = ExtResource("1_rte7y")
+speed = 80.0
+sprite = NodePath("PlayerSprite")
 
-[node name="Player Icon" type="Sprite2D" parent="." unique_id=1292958149]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=72132033]
 material = ExtResource("2_ywcaw")
-scale = Vector2(0.125, 0.12500001)
-texture = ExtResource("2_fyfjg")
+sprite_frames = ExtResource("2_rte7y")
+offset = Vector2(-3, -7)
 
 [node name="Player Hurtbox" type="CollisionShape2D" parent="." unique_id=788408295]
 shape = SubResource("RectangleShape2D_5vbj4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=646113341]

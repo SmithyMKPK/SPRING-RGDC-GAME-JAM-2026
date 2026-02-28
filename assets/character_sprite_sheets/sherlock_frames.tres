@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://7kvgin5h72xe"]
+
+[ext_resource type="Texture2D" uid="uid://bpqeqwg1ifdx1" path="res://assets/character_sprite_sheets/sherlock.png" id="1_yex3o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vby4v"]
+atlas = ExtResource("1_yex3o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyvas"]
+atlas = ExtResource("1_yex3o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45ww8"]
+atlas = ExtResource("1_yex3o")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajjah"]
+atlas = ExtResource("1_yex3o")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1w6r"]
+atlas = ExtResource("1_yex3o")
+region = Rect2(128, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vby4v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyvas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45ww8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajjah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1w6r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

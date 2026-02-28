@@ -1,7 +1,15 @@
 class_name PlayerMovement extends CharacterBody2D
 
+@export var speed: float = 150;
 
-const SPEED: float = 150.0
+@export var sprite: Node2D
+
+var facing_left: bool = true:
+	set(value):
+		if value == facing_left:
+			return;
+		facing_left = value;
+		self.sprite.scale.x *= sign(self.sprite.scale.x) * 1 if facing_left else -1;
 
 ## Sets the initial position of the player upon a level starting
 func set_initial_position(initial_position: Vector2) -> void:
@@ -13,5 +21,10 @@ func _physics_process(_delta: float) -> void:
 		Input.get_action_strength("Move Down") - Input.get_action_strength("Move Up")
 	).normalized()
 	
-	velocity = input_direction * SPEED
-	move_and_slide()
+	if input_direction.x < 0:
+		self.facing_left = true;
+	if input_direction.x > 0:
+		self.facing_left = false;
+	
+	velocity = input_direction * self.speed;
+	self.move_and_slide()
