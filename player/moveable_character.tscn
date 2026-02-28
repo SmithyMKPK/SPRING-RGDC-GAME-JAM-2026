@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://ctfegbv4gvfln"]
 
-[ext_resource type="Script" uid="uid://dqhvr513nhgyt" path="res://Player/player_movement.gd" id="1_rte7y"]
+[ext_resource type="Script" uid="uid://dqhvr513nhgyt" path="res://player/player_movement.gd" id="1_rte7y"]
 [ext_resource type="Texture2D" uid="uid://ucdg6b2ecag8" path="res://icon.svg" id="2_fyfjg"]
 [ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="2_ywcaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vbj4"]
-size = Vector2(114, 114)
+size = Vector2(9, 9)
 
 [node name="Moveable Character" type="CharacterBody2D" unique_id=1317433075]
 script = ExtResource("1_rte7y")
 
 [node name="Player Icon" type="Sprite2D" parent="." unique_id=1292958149]
 material = ExtResource("2_ywcaw")
+scale = Vector2(0.125, 0.12500001)
 texture = ExtResource("2_fyfjg")
 
 [node name="Player Hurtbox" type="CollisionShape2D" parent="." unique_id=788408295]
-position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_5vbj4")

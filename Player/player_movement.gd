@@ -1,7 +1,7 @@
 class_name PlayerMovement extends CharacterBody2D
 
 
-const SPEED: float = 300.0
+const SPEED: float = 150.0
 
 ## Sets the initial position of the player upon a level starting
 func set_initial_position(initial_position: Vector2) -> void:

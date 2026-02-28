@@ -3,13 +3,18 @@
 [ext_resource type="TileSet" uid="uid://bml6eq1kgt4t" path="res://assets/tilesets/actual_tile_set.tres" id="1_nmtg7"]
 [ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="1_rn056"]
 [ext_resource type="Script" uid="uid://bxwtr27ewgmjw" path="res://levels/level_tiles/autotiling_layer.gd" id="1_s830x"]
+[ext_resource type="Script" uid="uid://bg2t5xitg0v7q" path="res://levels/level.gd" id="1_tgen8"]
 [ext_resource type="TileSet" uid="uid://dhouok5fqh8uw" path="res://assets/tilesets/data_tile_set.tres" id="3_rn056"]
 [ext_resource type="PackedScene" uid="uid://bfb8btfufy32u" path="res://levels/light/light_source.tscn" id="5_3rgvw"]
+[ext_resource type="Script" uid="uid://bqfjpxh61soai" path="res://levels/level_camera.gd" id="6_nwu6r"]
+[ext_resource type="PackedScene" uid="uid://btc7md5rfjjqr" path="res://light_node/light_node.tscn" id="8_nwu6r"]
+[ext_resource type="PackedScene" uid="uid://cpbi7f1dco0hi" path="res://spawn_point/spawn_point.tscn" id="9_0bjxk"]
+[ext_resource type="PackedScene" uid="uid://cvs7kw4xr5of4" path="res://end_point/end_point.tscn" id="10_brbel"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rn056"]
-size = Vector2(100, 100)
-
-[node name="Level1" type="Node2D" unique_id=1673126048]
+[node name="Level1" type="Node2D" unique_id=1673126048 node_paths=PackedStringArray("following_camera", "end_point")]
+script = ExtResource("1_tgen8")
+following_camera = NodePath("Level Camera")
+end_point = NodePath("EndPoint")
 
 [node name="AutotilingLayer" type="TileMapLayer" parent="." unique_id=1535095717 node_paths=PackedStringArray("tile_data_source")]
 material = ExtResource("1_rn056")
@@ -20,17 +25,22 @@ metadata/_custom_type_script = "uid://bxwtr27ewgmjw"
 
 [node name="TileDataLayer" type="TileMapLayer" parent="AutotilingLayer" unique_id=1857756535]
 position = Vector2(-8, -8)
-tile_map_data = PackedByteArray("AAD///7/AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAACAP//AAABAAEAAAADAP//AAABAAEAAAAEAP//AAABAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAAAP7/AAABAAEAAAABAP7/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAGAP7/AAABAAEAAAD/////AAABAAEAAAAHAP7/AAABAAEAAAAIAP7/AAABAAEAAAAGAP//AAABAAEAAAAHAP//AAABAAEAAAAIAP//AAABAAEAAAAIAAAAAAABAAEAAAAIAAEAAAABAAEAAAAIAAIAAAABAAEAAAAHAAAAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAIAAMAAAABAAEAAAAHAAMAAAABAAEAAAAGAAMAAAABAAEAAAAFAAMAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAQAAAABAAEAAAAGAAQAAAABAAEAAAAHAAQAAAABAAEAAAAIAAQAAAABAAEAAAAEAAUAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAD+/wIAAAABAAEAAAD//wIAAAABAAEAAAAAAAIAAAABAAEAAAABAAIAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAADAAEAAAABAAEAAAADAAAAAAABAAEAAAADAP//AAABAAEAAAACAP//AAABAAEAAAABAP//AAABAAEAAAAAAP//AAABAAEAAAD/////AAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAAEAAAAAAABAAEAAAABAAEAAAACAAAAAAABAAEAAAABAAAAAAADAAAAAAAAAAAAAAABAAEAAAD//wAAAAABAAEAAAACAAEAAAABAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD///7/AAABAAEAAAAAAP7/AAABAAEAAAABAP7/AAABAAEAAAABAP3/AAABAAEAAAAAAP3/AAABAAEAAAD///3/AAABAAEAAAD///z/AAABAAEAAAAAAPz/AAABAAEAAAABAPz/AAABAAEAAAABAPv/AAAEAAAAAAAAAPv/AAADAAAAAAD///v/AAABAAEAAAAAAPr/AAABAAEAAAABAPr/AAABAAEAAAD///r/AAABAAEAAAACAPr/AAABAAEAAAADAPr/AAABAAEAAAAEAPr/AAABAAEAAAAEAPv/AAABAAEAAAAEAPz/AAABAAEAAAADAPz/AAABAAEAAAACAPz/AAABAAEAAAACAPv/AAABAAEAAAADAPv/AAABAAEAAAAFAPz/AAABAAEAAAAFAPv/AAADAAAAAAAFAPr/AAABAAEAAAAGAPr/AAAEAAAAAAAGAPv/AAADAAAAAAAHAPv/AAABAAEAAAAHAPz/AAABAAEAAAAGAPz/AAABAAEAAAAHAPr/AAABAAEAAAAFAPn/AAABAAEAAAAFAPj/AAABAAEAAAAFAPf/AAABAAEAAAAFAPb/AAABAAEAAAAGAPb/AAABAAEAAAAHAPb/AAABAAEAAAAHAPf/AAABAAEAAAAHAPj/AAABAAEAAAAHAPn/AAABAAEAAAAGAPn/AAABAAEAAAAGAPf/AAABAAEAAAAGAPj/AAAEAAAAAAA=")
 tile_set = ExtResource("3_rn056")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1924666660]
+[node name="Level Camera" type="Camera2D" parent="." unique_id=530940328]
+position = Vector2(40, -120)
 zoom = Vector2(2, 2)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=224608911]
-material = ExtResource("1_rn056")
-position = Vector2(10.000001, 36)
-scale = Vector2(0.33, 0.33)
-texture = SubResource("PlaceholderTexture2D_rn056")
+script = ExtResource("6_nwu6r")
 
 [node name="LightSource" parent="." unique_id=515451218 instance=ExtResource("5_3rgvw")]
+position = Vector2(40, -120)
 strength = 80.0
+
+[node name="Light Node" parent="." unique_id=356253661 instance=ExtResource("8_nwu6r")]
+position = Vector2(40, -120)
+
+[node name="Spawn Point" parent="." unique_id=795000628 instance=ExtResource("9_0bjxk")]
+
+[node name="EndPoint" parent="." unique_id=1374820303 instance=ExtResource("10_brbel")]
+position = Vector2(96, -152)

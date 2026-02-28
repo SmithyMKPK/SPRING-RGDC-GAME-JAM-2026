@@ -4,6 +4,8 @@ class_name Level extends Node2D
 ## A reference to the camera that'll be following the player
 @export var following_camera: FollowCamera
 
+@export var end_point: EndPoint
+
 ## References to each light node in a given level
 var _light_nodes: Array[LightNode]
 
@@ -17,6 +19,8 @@ func _ready() -> void:
 	for child: Node in self.get_children():
 		if child is LightNode:
 			self._light_nodes.append(child)
+	
+	self.end_point.finished_level.connect(Callable(self, "_on_level_finished"))
 
 func _process(_delta: float) -> void:
 	var light_node_distances: Dictionary
@@ -26,6 +30,11 @@ func _process(_delta: float) -> void:
 		light_node_distances[light_node] = light_node_distance
 	
 	self._closest_light_node = get_closest_light_node(light_node_distances)
+
+## Acts on the end point's level finished signal
+func _on_level_finished() -> void:
+	Player.exit_level()
+	print("Level finished!")
 
 ## Returns the light node that's closest to the player
 func get_closest_light_node(light_node_distances: Dictionary) -> LightNode:
