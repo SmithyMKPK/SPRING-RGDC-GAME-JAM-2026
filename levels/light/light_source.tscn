@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bfb8btfufy32u"]
+
+[ext_resource type="Script" uid="uid://nflqolleiscq" path="res://levels/light/lightsource.gd" id="1_klb40"]
+[ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="2_wwlts"]
+
+[node name="LightSource" type="Node2D" unique_id=515451218]
+script = ExtResource("1_klb40")
+global_light_material = ExtResource("2_wwlts")
+metadata/_custom_type_script = "uid://nflqolleiscq"

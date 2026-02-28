@@ -5,4 +5,4 @@
 [resource]
 shader = ExtResource("1_bg8hg")
 shader_parameter/vision_light_source = Vector2(0, 0)
-shader_parameter/max_distance = 300.0
+shader_parameter/max_distance = 80.0
