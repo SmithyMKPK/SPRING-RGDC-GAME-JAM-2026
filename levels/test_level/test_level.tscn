@@ -7,9 +7,6 @@
 [ext_resource type="Script" uid="uid://nflqolleiscq" path="res://levels/light/lightsource.gd" id="4_xctyr"]
 [ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="5_8th66"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xctyr"]
-size = Vector2(1000, 1000)
-
 [node name="Test Level" type="Node2D" unique_id=2114181627 node_paths=PackedStringArray("following_camera")]
 script = ExtResource("1_cpcrd")
 following_camera = NodePath("Level Camera")
@@ -30,8 +27,3 @@ metadata/_custom_type_script = "uid://nflqolleiscq"
 
 [node name="Spawn Point" parent="." unique_id=795000628 instance=ExtResource("4_qo0ko")]
 position = Vector2(-16, 37)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1095334777]
-material = ExtResource("5_8th66")
-position = Vector2(-65, -105)
-texture = SubResource("PlaceholderTexture2D_xctyr")
