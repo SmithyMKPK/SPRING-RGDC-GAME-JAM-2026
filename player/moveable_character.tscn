@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="2_ywcaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vbj4"]
-size = Vector2(16, 16)
+size = Vector2(12, 12)
 
 [sub_resource type="Animation" id="Animation_fyfjg"]
 length = 0.001
@@ -153,6 +153,7 @@ collision_mask = 17
 script = ExtResource("1_rte7y")
 speed = 80.0
 animation_tree = NodePath("AnimationTree")
+wall_walk_tolerance = 0.13
 sprite = NodePath("PlayerSprite")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=72132033]
