@@ -13,7 +13,13 @@ func _ready() -> void:
 
 ## Acts on a level being pressed
 func _on_level_button_pressed(level_number: int) -> void:
-	print(level_number)
+	match level_number:
+		1:
+			get_tree().change_scene_to_file("res://levels/one/level_one_concept.tscn")
+		2:
+			get_tree().change_scene_to_file("res://levels/two/level_two_concept.tscn")
+		3:
+			get_tree().change_scene_to_file("res://levels/three/level_three_concept.tscn")
 
 ## Acts on the back button getting presses
 func _on_back_button_pressed() -> void:

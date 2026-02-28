@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cyx1afkomfkun"]
+
+[ext_resource type="Script" uid="uid://bg2t5xitg0v7q" path="res://levels/level.gd" id="1_5rxxd"]
+[ext_resource type="PackedScene" uid="uid://btc7md5rfjjqr" path="res://light_node/light_node.tscn" id="2_2gti5"]
+[ext_resource type="Script" uid="uid://bqfjpxh61soai" path="res://levels/level_camera.gd" id="3_2xqre"]
+
+[node name="Level Two Concept" type="Node2D" unique_id=2114181627 node_paths=PackedStringArray("following_camera")]
+script = ExtResource("1_5rxxd")
+following_camera = NodePath("Level Camera")
+
+[node name="Label" type="Label" parent="." unique_id=1064741092]
+offset_right = 192.0
+offset_bottom = 64.0
+text = "Level Two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Light Node" parent="." unique_id=356253661 instance=ExtResource("2_2gti5")]
+visible = false
+position = Vector2(1152, 0)
+
+[node name="Light Node2" parent="." unique_id=731427006 instance=ExtResource("2_2gti5")]
+visible = false
+
+[node name="Level Camera" type="Camera2D" parent="." unique_id=66409299]
+visible = false
+zoom = Vector2(1.25, 1.25)
+script = ExtResource("3_2xqre")

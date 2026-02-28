@@ -8,11 +8,21 @@
 script = ExtResource("1_0ilb4")
 following_camera = NodePath("Level Camera")
 
+[node name="Label" type="Label" parent="." unique_id=1064741092]
+offset_right = 192.0
+offset_bottom = 64.0
+text = "Level One"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Light Node" parent="." unique_id=356253661 instance=ExtResource("2_ugmvj")]
+visible = false
 position = Vector2(1152, 0)
 
 [node name="Light Node2" parent="." unique_id=731427006 instance=ExtResource("2_ugmvj")]
+visible = false
 
 [node name="Level Camera" type="Camera2D" parent="." unique_id=66409299]
+visible = false
 zoom = Vector2(1.25, 1.25)
 script = ExtResource("3_4whr4")
