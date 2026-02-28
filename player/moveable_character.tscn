@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctfegbv4gvfln"]
 
-[ext_resource type="Script" uid="uid://dqhvr513nhgyt" path="res://Player/player_movement.gd" id="1_rte7y"]
+[ext_resource type="Script" uid="uid://dqhvr513nhgyt" path="res://player/player_movement.gd" id="1_rte7y"]
 [ext_resource type="SpriteFrames" uid="uid://7kvgin5h72xe" path="res://assets/character_sprite_sheets/sherlock_frames.tres" id="2_rte7y"]
 [ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="2_ywcaw"]
 
@@ -153,7 +153,7 @@ collision_mask = 17
 script = ExtResource("1_rte7y")
 speed = 80.0
 animation_tree = NodePath("AnimationTree")
-wall_walk_tolerance = 0.13
+wall_walk_tolerance = 0.1
 sprite = NodePath("PlayerSprite")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=72132033]
