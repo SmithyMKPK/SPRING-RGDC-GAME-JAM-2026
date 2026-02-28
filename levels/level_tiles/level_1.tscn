@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray("AAD///7/AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAE
 tile_set = ExtResource("3_rn056")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1924666660]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=224608911]
 material = ExtResource("1_rn056")
