@@ -15,7 +15,7 @@ move_with_self = NodePath("SubViewport/3DWavesScene/MeshInstance3D")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1343760910]
 own_world_3d = true
 handle_input_locally = false
-size = Vector2i(330, 180)
+size = Vector2i(320, 180)
 render_target_update_mode = 4
 
 [node name="3DWavesScene" parent="SubViewport" unique_id=748698008 instance=ExtResource("1_jibp8")]
