@@ -2,9 +2,11 @@
 class_name Level extends Node2D
 
 ## A reference to the camera that'll be following the player
-@export var following_camera: FollowCamera
+@onready var following_camera: FollowCamera = $"Level Camera"
 
-@export var end_point: EndPoint
+@onready var end_point: EndPoint = $EndPoint
+
+@onready var spawn_point: Node2D = $"Spawn Point"
 
 ## References to each light node in a given level
 var _light_nodes: Array[LightNode]

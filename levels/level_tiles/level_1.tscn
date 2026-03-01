@@ -10,10 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cpbi7f1dco0hi" path="res://spawn_point/spawn_point.tscn" id="9_0bjxk"]
 [ext_resource type="PackedScene" uid="uid://cvs7kw4xr5of4" path="res://end_point/end_point.tscn" id="10_brbel"]
 
-[node name="Level1" type="Node2D" unique_id=1673126048 node_paths=PackedStringArray("following_camera", "end_point")]
+[node name="Level1" type="Node2D" unique_id=1673126048]
 script = ExtResource("1_tgen8")
-following_camera = NodePath("Level Camera")
-end_point = NodePath("EndPoint")
 
 [node name="AutotilingLayer" type="TileMapLayer" parent="." unique_id=1535095717 node_paths=PackedStringArray("tile_data_source")]
 material = ExtResource("1_rn056")
