@@ -34,6 +34,7 @@ func _on_player_death() -> void:
 	self.light_source.strength = 60;
 
 func _on_player_spawn() -> void:
+	$ColorRect.modulate.a = 1;
 	self.internal_global_position = Player.current_position;
 	self.spawn_grace_timer.start();
 	if self.last_light_strength != 0:
