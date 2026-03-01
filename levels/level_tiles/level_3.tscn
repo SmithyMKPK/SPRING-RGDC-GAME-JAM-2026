@@ -36,10 +36,10 @@ position = Vector2(96, 0)
 position = Vector2(-216, -160)
 
 [node name="Light Node3" parent="." unique_id=1377132472 instance=ExtResource("7_dmr0o")]
-position = Vector2(-496, 107)
+position = Vector2(-492, 104)
 
 [node name="Light Node4" parent="." unique_id=1296469291 instance=ExtResource("7_dmr0o")]
-position = Vector2(-223, 208)
+position = Vector2(-223, 216)
 
 [node name="Spawn Point" parent="." unique_id=795000628 instance=ExtResource("8_dsknv")]
 z_index = 2
@@ -47,6 +47,7 @@ position = Vector2(120, 24)
 
 [node name="EndPoint" parent="." unique_id=1374820303 instance=ExtResource("9_ndgqt")]
 position = Vector2(-488, 24)
+level = 3
 
 [node name="LevelFinishedMenu" parent="." unique_id=589850494 instance=ExtResource("10_jbovo")]
 visible = false

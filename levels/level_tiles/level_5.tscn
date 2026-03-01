@@ -50,6 +50,7 @@ position = Vector2(-104, 0)
 
 [node name="EndPoint" parent="." unique_id=1374820303 instance=ExtResource("9_fg2i6")]
 position = Vector2(-296, -88)
+level = 5
 
 [node name="LevelFinishedMenu" parent="." unique_id=589850494 instance=ExtResource("10_suipa")]
 visible = false

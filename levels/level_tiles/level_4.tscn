@@ -44,5 +44,6 @@ position = Vector2(120, -8)
 
 [node name="EndPoint" parent="." unique_id=1374820303 instance=ExtResource("9_fev6l")]
 position = Vector2(-136, -16)
+level = 4
 
 [node name="LevelFinishedMenu" parent="." unique_id=589850494 instance=ExtResource("10_kip4d")]
