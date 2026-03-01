@@ -16,7 +16,21 @@ var _light_nodes: Array[LightNode]
 ## Set property that allows the camera's target to be known each frame
 var _closest_light_node: LightNode:
 	set(value):
-		following_camera.target_light_node = value
+		_closest_light_node = value;
+		self._update_focus();
+
+var override_light_node: Node2D:
+	set(value):
+		if value == override_light_node:
+			return;
+		override_light_node = value;
+		self._update_focus();
+
+func _update_focus() -> void:
+	if self.override_light_node == null:
+		following_camera.target_light_node = self._closest_light_node;
+	else:
+		following_camera.target_light_node = self.override_light_node;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,7 +38,16 @@ func _ready() -> void:
 		if child is LightNode:
 			self._light_nodes.append(child)
 	
-	self.end_point.finished_level.connect(Callable(self, "_on_level_finished"))
+	self.end_point.finished_level.connect(Callable(self, "_on_level_finished"));
+	
+	Player.get_death_signal().connect(self._on_player_death);
+	Player.get_respawn_signal().connect(self._on_player_respawn);
+
+func _on_player_death() -> void:
+	self.override_light_node = Player._movable_character;
+
+func _on_player_respawn() -> void:
+	self.override_light_node = null;
 
 func _process(_delta: float) -> void:
 	var light_node_distances: Dictionary
@@ -38,6 +61,10 @@ func _process(_delta: float) -> void:
 ## Acts on the end point's level finished signal
 func _on_level_finished() -> void:
 	Player.exit_level()
+	var tmp_node: Node2D = Node2D.new();
+	self.end_point.add_child(tmp_node);
+	tmp_node.position += Vector2.UP * 10;
+	self.override_light_node = tmp_node;
 	level_finished_menu.visible = true
 
 ## Returns the light node that's closest to the player
