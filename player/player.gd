@@ -27,7 +27,9 @@ func enter_level(spawnpoint: Node2D) -> void:
 	self.add_child(self._movable_character)
 	self._movable_character.set_initial_position(spawnpoint.global_position)
 	self.z_index = spawnpoint.z_index;
+	#self._movable_character.collision_layer = 1;
 
 ## Removes the movable character to the scene tree
 func exit_level() -> void:
+	#self._movable_character.collision_layer = 0;
 	self.remove_child(_movable_character)

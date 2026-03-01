@@ -8,6 +8,8 @@ class_name Level extends Node2D
 
 @onready var spawn_point: Node2D = $"Spawn Point"
 
+@onready var level_finished_menu: CanvasLayer = $LevelFinishedMenu
+
 ## References to each light node in a given level
 var _light_nodes: Array[LightNode]
 
@@ -36,7 +38,7 @@ func _process(_delta: float) -> void:
 ## Acts on the end point's level finished signal
 func _on_level_finished() -> void:
 	Player.exit_level()
-	print("Level finished!")
+	level_finished_menu.visible = true
 
 ## Returns the light node that's closest to the player
 func get_closest_light_node(light_node_distances: Dictionary) -> LightNode:
