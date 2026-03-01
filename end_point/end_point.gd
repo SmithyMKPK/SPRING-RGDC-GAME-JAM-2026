@@ -4,6 +4,13 @@ class_name EndPoint extends Area2D
 ## Emitted when the end point is crossed
 signal finished_level
 
+var count = 60;
+
+func _physics_process(_delta: float) -> void:
+	count -= 1;
+	if count < 0:
+		self.monitoring = true;
+	
 ## Acts on whenever something enters the end point's body
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:

@@ -5,12 +5,12 @@ extends Control
 
 @export var button_preset: PackedScene;
 
-@export var levels: Array[PackedScene] = [];
+@export var levels: Array[String] = [];
 
 func _ready() -> void:
 	var current_button_level: int = 0;
 	
-	for level: PackedScene in self.levels:
+	for level: String in self.levels:
 		
 		var button: Button = self.button_preset.instantiate();
 		button.text = "level %s" % [current_button_level + 1];
@@ -23,7 +23,7 @@ func _ready() -> void:
 
 ## Acts on a level being pressed
 func _on_level_button_pressed(level_number: int) -> void:
-	self.get_tree().change_scene_to_packed(self.levels[level_number]);
+	self.get_tree().change_scene_to_file(self.levels[level_number]);
 
 ## Acts on the back button getting presses
 func _on_back_button_pressed() -> void:
