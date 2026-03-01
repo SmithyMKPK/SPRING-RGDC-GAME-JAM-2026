@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cvs7kw4xr5of4"]
 
 [ext_resource type="Script" uid="uid://cy8rt7gcoj7ts" path="res://end_point/end_point.gd" id="1_j2h8x"]
+[ext_resource type="SpriteFrames" uid="uid://ddva1kqltv1m" path="res://assets/character_sprite_sheets/finish_flag.tres" id="2_lgil7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgil7"]
 
@@ -9,13 +10,12 @@ collision_layer = 0
 monitoring = false
 script = ExtResource("1_j2h8x")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=483031782]
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299802199]
 shape = SubResource("RectangleShape2D_lgil7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=6929732]
+position = Vector2(0, 6)
+sprite_frames = ExtResource("2_lgil7")
+speed_scale = 0.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
