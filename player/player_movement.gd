@@ -67,6 +67,9 @@ func _physics_process(delta: float) -> void:
 	if abs(velocity) > Vector2.ZERO && !self.is_walking_sound_on:
 		self.player_sound.play()
 		self.is_walking_sound_on = true
+	elif velocity == Vector2.ZERO:
+		self.player_sound.stop()
+		self.is_walking_sound_on = false
 	
 	var collided: bool = self.move_and_slide();
 	if collided:
