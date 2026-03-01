@@ -5,6 +5,10 @@ class_name PlayerMovement extends CharacterBody2D
 
 @export var animation_tree: AnimationTree;
 
+@export var wall_walk_tolerance: float;
+
+var wall_walk_timer: float;
+
 @export var sprite: Node2D
 
 var facing_left: bool = true:
@@ -18,7 +22,7 @@ var facing_left: bool = true:
 func set_initial_position(initial_position: Vector2) -> void:
 	self.position = initial_position
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var input_direction = Vector2(
 		Input.get_action_strength("Move Right") - Input.get_action_strength("Move Left"),
 		Input.get_action_strength("Move Down") - Input.get_action_strength("Move Up")
@@ -34,4 +38,13 @@ func _physics_process(_delta: float) -> void:
 		self.facing_left = false;
 	
 	velocity = input_direction * self.speed;
-	self.move_and_slide()
+	var collided: bool = self.move_and_slide();
+	if collided:
+		self.wall_walk_timer -= delta;
+	else:
+		self.wall_walk_timer = wall_walk_tolerance;
+	if self.wall_walk_timer < 0:
+		self.dead();
+
+func dead() -> void:
+	self.sprite.scale.y = -1;
