@@ -13,6 +13,6 @@ script = ExtResource("1_wjito")
 
 [node name="Waves" parent="." unique_id=1483759280 instance=ExtResource("2_5bsm2")]
 texture = SubResource("ViewportTexture_wjito")
-scale_fac = 0.04
+scale_fac = 0.1
 
 [node name="LightSource" parent="." unique_id=515451218 instance=ExtResource("3_fmu8n")]

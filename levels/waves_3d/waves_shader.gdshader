@@ -46,8 +46,10 @@ vec3 compute_vertex_pos(vec3 vertex){
 
 varying float foam;
 varying float height;
+varying vec2 world_uv;
 
 void vertex() {
+	world_uv = VERTEX.xz * .1;
 	vec3 new_vertex = compute_vertex_pos(VERTEX);
 	vec3 new_vertex_x_grad = compute_vertex_pos(VERTEX + vec3(finite_difference,0,0));
 	vec3 new_vertex_z_grad = compute_vertex_pos(VERTEX + vec3(0,0,finite_difference));
@@ -70,11 +72,11 @@ void fragment() {
 		height_color * clamp(height * height_light_factor / offset_largest, 0.,1.) +
 		ambient_color * ambient_light_factor
 	), 0., 1.);
-	base_color += step(1. - max(.001,foam),texture(bubble_noise,UV).x);
+	base_color += step(1. - max(.001,foam),texture(bubble_noise,world_uv).x);
 	float base_color_luminance = dot(base_color, vec3(.3,.7,.2));
 	vec3 base_color_norm = base_color * (1./base_color_luminance);
 
-	float dither_noise = texture(bubble_noise, UV + wave_direction * TIME * .1).x;
+	float dither_noise = texture(bubble_noise, world_uv * .5 + wave_direction * TIME * .01).x;
 
 	ALBEDO = round(base_color_luminance * COLOR_STEPS + dither_noise) * INV_COLOR_STEPS * base_color_norm;
 }
