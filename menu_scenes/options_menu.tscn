@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cnqy0ca0e0jj6" path="res://assets/typefaces/Cairopixel.ttf" id="1_svm0n"]
 [ext_resource type="Script" uid="uid://c1piijhgtyqit" path="res://menu_scenes/options_menu.gd" id="1_w7emi"]
+[ext_resource type="Script" uid="uid://dl41i3ceeu241" path="res://menu_scenes/grab_focus_on_show.gd" id="3_um1hk"]
 
 [node name="Options Menu" type="Control" unique_id=496063839 node_paths=PackedStringArray("_volume_bar")]
 layout_mode = 3
@@ -57,6 +58,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_svm0n")
 theme_override_font_sizes/font_size = 32
 text = "Back"
+script = ExtResource("3_um1hk")
 
 [connection signal="value_changed" from="Panel/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Back Button" to="." method="_on_back_button_pressed"]

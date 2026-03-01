@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://lnsm40u5fhrl" path="res://menu_scenes/level_select/level_selection_menu.gd" id="1_2vl8i"]
 [ext_resource type="FontFile" uid="uid://cnqy0ca0e0jj6" path="res://assets/typefaces/Cairopixel.ttf" id="1_r6oyx"]
 [ext_resource type="PackedScene" uid="uid://735rtut6cfeq" path="res://menu_scenes/level_select/level_button.tscn" id="2_eyild"]
+[ext_resource type="Script" uid="uid://dl41i3ceeu241" path="res://menu_scenes/grab_focus_on_show.gd" id="4_a6wvx"]
 
 [node name="Level Selection Menu" type="Control" unique_id=493822413 node_paths=PackedStringArray("_level_container")]
 layout_mode = 3
@@ -46,6 +47,8 @@ theme_override_constants/separation = 4
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=16196201]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Back Button")
+focus_neighbor_bottom = NodePath("../Back Button")
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=608088048]
 layout_mode = 2
@@ -55,5 +58,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_r6oyx")
 theme_override_font_sizes/font_size = 32
 text = "Back"
+script = ExtResource("4_a6wvx")
 
 [connection signal="pressed" from="VBoxContainer/Back Button" to="." method="_on_back_button_pressed"]

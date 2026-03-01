@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://735rtut6cfeq"]
 
-[ext_resource type="FontFile" uid="uid://cnqy0ca0e0jj6" path="res://assets/typefaces/Cairopixel.ttf" id="1_hup7u"]
+[ext_resource type="Theme" uid="uid://nawdcl54fj77" path="res://assets/menus_theme.tres" id="1_hup7u"]
 
 [node name="LevelButton" type="Button" unique_id=1225191436]
 custom_minimum_size = Vector2(100, 0)
 offset_right = 110.0
 offset_bottom = 233.0
-theme_override_fonts/font = ExtResource("1_hup7u")
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("1_hup7u")
 text = "Level Name"
