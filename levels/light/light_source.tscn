@@ -5,6 +5,6 @@
 
 [node name="LightSource" type="Node2D" unique_id=515451218]
 script = ExtResource("1_klb40")
-strength = 150.0
+strength = 130.0
 global_light_material = ExtResource("2_wwlts")
 metadata/_custom_type_script = "uid://nflqolleiscq"
