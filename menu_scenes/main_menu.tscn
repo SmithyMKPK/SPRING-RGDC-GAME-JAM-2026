@@ -55,8 +55,8 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_dg02v")
 theme_override_font_sizes/font_size = 72
-text = "Ah Yes, 
-The Clueless Game"
+text = "Post Casket
+Investigation"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=1310971925]
