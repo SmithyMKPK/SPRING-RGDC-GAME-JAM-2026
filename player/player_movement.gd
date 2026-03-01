@@ -30,7 +30,7 @@ func set_initial_position(initial_position: Vector2) -> void:
 func _process(_delta: float) -> void:
 	if self.respawning:
 		var playback: AnimationNodeStateMachinePlayback = self.animation_tree.get("parameters/playback");
-		print(playback.get_current_node())
+		#print(playback.get_current_node())
 		if playback.get_current_node() == "End":
 			self.animation_tree.set("parameters/conditions/dead", false);
 			playback.travel("idle");
