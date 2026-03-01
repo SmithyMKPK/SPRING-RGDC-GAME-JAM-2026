@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cnckukbnp1eeo"]
+
+[ext_resource type="Texture2D" uid="uid://bpqeqwg1ifdx1" path="res://assets/character_sprite_sheets/sherlock.png" id="1_k0ibh"]
+
+[resource]
+atlas = ExtResource("1_k0ibh")
+region = Rect2(183.01385, 3.8271356, 6.1958466, 11.178984)

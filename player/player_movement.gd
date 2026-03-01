@@ -9,6 +9,9 @@ class_name PlayerMovement extends CharacterBody2D
 
 var wall_walk_timer: float;
 
+## A direct reference to the initial position the player has in a level
+var initial_pos: Vector2
+
 @export var sprite: Node2D
 
 var facing_left: bool = true:
@@ -21,6 +24,7 @@ var facing_left: bool = true:
 ## Sets the initial position of the player upon a level starting
 func set_initial_position(initial_position: Vector2) -> void:
 	self.position = initial_position
+	self.initial_pos = initial_position
 
 func _physics_process(delta: float) -> void:
 	var input_direction = Vector2(
@@ -47,4 +51,4 @@ func _physics_process(delta: float) -> void:
 		self.dead();
 
 func dead() -> void:
-	self.sprite.scale.y = -1;
+	self.position = initial_pos

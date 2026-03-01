@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://delkpkiemnu1l"]
+
+[ext_resource type="Script" uid="uid://bg2t5xitg0v7q" path="res://levels/level.gd" id="1_f481x"]
+[ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="2_kip4d"]
+[ext_resource type="TileSet" uid="uid://bml6eq1kgt4t" path="res://assets/tilesets/actual_tile_set.tres" id="3_tnpbd"]
+[ext_resource type="Script" uid="uid://bxwtr27ewgmjw" path="res://levels/level_tiles/autotiling_layer.gd" id="4_rj0ck"]
+[ext_resource type="TileSet" uid="uid://dhouok5fqh8uw" path="res://assets/tilesets/data_tile_set.tres" id="5_8qd5i"]
+[ext_resource type="PackedScene" uid="uid://dfeya0g6tn2k2" path="res://levels/camera/level_camera.tscn" id="6_au4ga"]
+[ext_resource type="PackedScene" uid="uid://btc7md5rfjjqr" path="res://light_node/light_node.tscn" id="7_bb707"]
+[ext_resource type="PackedScene" uid="uid://cpbi7f1dco0hi" path="res://spawn_point/spawn_point.tscn" id="8_fkggm"]
+[ext_resource type="PackedScene" uid="uid://cvs7kw4xr5of4" path="res://end_point/end_point.tscn" id="9_fev6l"]
+
+[node name="Level4" type="Node2D" unique_id=1673126048]
+script = ExtResource("1_f481x")
+
+[node name="AutotilingLayer" type="TileMapLayer" parent="." unique_id=1535095717 node_paths=PackedStringArray("tile_data_source")]
+material = ExtResource("2_kip4d")
+tile_set = ExtResource("3_tnpbd")
+script = ExtResource("4_rj0ck")
+tile_data_source = NodePath("TileDataLayer")
+metadata/_custom_type_script = "uid://bxwtr27ewgmjw"
+
+[node name="TileDataLayer" type="TileMapLayer" parent="AutotilingLayer" unique_id=1857756535]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray("AAAIAP7/AAABAAEAAAAIAP//AAABAAEAAAAIAAAAAAABAAEAAAAIAAEAAAABAAEAAAAJAP7/AAABAAEAAAAJAP//AAABAAEAAAAJAAAAAAABAAEAAAAJAAEAAAABAAEAAAAHAAEAAAABAAEAAAAGAAEAAAABAAEAAAAHAAAAAAABAAEAAAAHAP//AAABAAEAAAAHAP7/AAABAAEAAAAGAP7/AAABAAEAAAAGAP//AAABAAEAAAAGAAAAAAABAAEAAAAFAP//AAABAAEAAAAEAP//AAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAAEAAEAAAABAAEAAAAEAAAAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAADAAYAAAABAAEAAAACAAYAAAABAAEAAAABAAYAAAABAAEAAAAAAAYAAAABAAEAAAD//wYAAAABAAEAAAD//wUAAAABAAEAAAD//wQAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAMAAAABAAEAAAAAAAIAAAABAAEAAAAAAAEAAAABAAEAAAAAAAAAAAABAAEAAAAAAP//AAABAAEAAAAAAP7/AAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAEAAAD//wMAAAABAAEAAAD//wIAAAABAAEAAAD//wEAAAABAAEAAAD//wAAAAABAAEAAAD/////AAABAAEAAAD///7/AAABAAEAAAD///3/AAABAAEAAAAEAAcAAAABAAEAAAADAAcAAAABAAEAAAACAAcAAAABAAEAAAABAAcAAAABAAEAAAAAAAcAAAABAAEAAAD//wcAAAABAAEAAAAAAP3/AAABAAEAAAAAAPz/AAABAAEAAAAAAPv/AAABAAEAAAAAAPr/AAABAAEAAAAAAPn/AAABAAEAAAAAAPj/AAABAAEAAAAAAPf/AAABAAEAAAAAAPb/AAABAAEAAAD///z/AAABAAEAAAD///v/AAABAAEAAAD///r/AAABAAEAAAD///n/AAABAAEAAAD///j/AAABAAEAAAD///f/AAABAAEAAAAAAPX/AAABAAEAAAD///X/AAABAAEAAAAFAAAAAAABAAEAAAD///b/AAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAABAAEAAAAIAAUAAAABAAEAAAAIAAQAAAABAAEAAAABAAgAAAABAAEAAAACAAgAAAABAAEAAAACAAkAAAABAAEAAAABAAkAAAABAAEAAAABAAoAAAABAAEAAAABAAsAAAABAAEAAAACAAsAAAABAAEAAAACAAoAAAABAAEAAAACAAwAAAABAAEAAAABAAwAAAABAAEAAAADAAwAAAABAAEAAAADAAsAAAABAAEAAAAEAAsAAAABAAEAAAAEAAwAAAABAAEAAAAFAAwAAAABAAEAAAAGAAwAAAABAAEAAAAHAAwAAAABAAEAAAAIAAwAAAABAAEAAAAIAAsAAAABAAEAAAAIAAoAAAABAAEAAAAIAAkAAAABAAEAAAAIAAgAAAABAAEAAAAIAAcAAAABAAEAAAAIAAYAAAABAAEAAAAHAAYAAAABAAEAAAAHAAcAAAABAAEAAAAHAAgAAAABAAEAAAAHAAkAAAABAAEAAAAGAAsAAAABAAEAAAAFAAsAAAABAAEAAAAHAAsAAAABAAEAAAAHAAoAAAABAAEAAAD+//v/AAABAAEAAAD9//v/AAABAAEAAAD8//v/AAABAAEAAAD7//v/AAABAAEAAAD6//v/AAABAAEAAAD5//v/AAABAAEAAAD3//v/AAABAAEAAAD4//v/AAABAAEAAAAEAA4AAAABAAEAAAAFAA4AAAABAAEAAAAGAA4AAAABAAEAAAAFAA0AAAABAAEAAAAEAA0AAAABAAEAAAAGAA0AAAABAAEAAAD3////AAABAAEAAAD3//7/AAABAAEAAAD3//3/AAABAAEAAAD3//z/AAABAAEAAAD4//z/AAABAAEAAAD4//3/AAABAAEAAAD4//7/AAABAAEAAAD4////AAABAAEAAAD6//T/AAABAAEAAAD6//X/AAABAAEAAAD6//b/AAABAAEAAAD7//b/AAABAAEAAAD8//b/AAABAAEAAAD8//X/AAABAAEAAAD8//T/AAABAAEAAAD7//T/AAABAAEAAAD7//X/AAABAAEAAAA=")
+tile_set = ExtResource("5_8qd5i")
+
+[node name="Level Camera" parent="." unique_id=1371421371 instance=ExtResource("6_au4ga")]
+position = Vector2(16, 0)
+
+[node name="Light Node" parent="." unique_id=356253661 instance=ExtResource("7_bb707")]
+position = Vector2(80, 16)
+
+[node name="Light Node2" parent="." unique_id=597738772 instance=ExtResource("7_bb707")]
+position = Vector2(-80, -176)
+
+[node name="Light Node3" parent="." unique_id=1377132472 instance=ExtResource("7_bb707")]
+position = Vector2(80, 208)
+
+[node name="Spawn Point" parent="." unique_id=795000628 instance=ExtResource("8_fkggm")]
+z_index = 2
+position = Vector2(120, -8)
+
+[node name="EndPoint" parent="." unique_id=1374820303 instance=ExtResource("9_fev6l")]
+position = Vector2(-136, -16)
