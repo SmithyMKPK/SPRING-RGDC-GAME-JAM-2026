@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bpf71ifns3ocu"]
+
+[ext_resource type="Script" uid="uid://lnsm40u5fhrl" path="res://menu_scenes/level_select/level_selection_menu.gd" id="1_2vl8i"]
+[ext_resource type="FontFile" uid="uid://cnqy0ca0e0jj6" path="res://assets/typefaces/Cairopixel.ttf" id="1_r6oyx"]
+[ext_resource type="PackedScene" uid="uid://735rtut6cfeq" path="res://menu_scenes/level_select/level_button.tscn" id="2_eyild"]
+
+[node name="Level Selection Menu" type="Control" unique_id=493822413 node_paths=PackedStringArray("_level_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2vl8i")
+_level_container = NodePath("VBoxContainer/HBoxContainer")
+button_preset = ExtResource("2_eyild")
+
+[node name="Panel" type="Panel" parent="." unique_id=628389745]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1944206383]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=570914773]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r6oyx")
+theme_override_font_sizes/font_size = 48
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=794346751]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=16196201]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=608088048]
+layout_mode = 2
+
+[node name="Back Button" type="Button" parent="VBoxContainer" unique_id=345181157]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r6oyx")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Back Button" to="." method="_on_back_button_pressed"]

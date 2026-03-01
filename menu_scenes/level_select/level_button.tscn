@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://735rtut6cfeq"]
+
+[node name="LevelButton" type="Button" unique_id=1225191436]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 110.0
+offset_bottom = 233.0
+text = "Level Name"
