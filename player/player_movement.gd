@@ -7,10 +7,14 @@ class_name PlayerMovement extends CharacterBody2D
 
 @export var wall_walk_tolerance: float;
 
+@export var player_sound: AudioStreamPlayer
+
 var wall_walk_timer: float;
 
 ## A direct reference to the initial position the player has in a level
 var initial_pos: Vector2
+
+var is_walking_sound_on: bool
 
 @export var sprite: Node2D
 
@@ -56,6 +60,10 @@ func _physics_process(delta: float) -> void:
 		self.facing_left = false;
 	
 	velocity = input_direction * self.speed;
+	if abs(velocity) > Vector2.ZERO && !self.is_walking_sound_on:
+		self.player_sound.play()
+		self.is_walking_sound_on = true
+	
 	var collided: bool = self.move_and_slide();
 	if collided:
 		self.wall_walk_timer -= delta;
@@ -71,3 +79,7 @@ func dead() -> void:
 	self.respawning = true;
 	self.animation_tree.set("parameters/conditions/dead", true);
 	#self.position = initial_pos;
+
+
+func _on_player_sounds_finished() -> void:
+	self.is_walking_sound_on = false

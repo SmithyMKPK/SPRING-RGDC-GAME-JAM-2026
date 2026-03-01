@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dqhvr513nhgyt" path="res://player/player_movement.gd" id="1_rte7y"]
 [ext_resource type="SpriteFrames" uid="uid://7kvgin5h72xe" path="res://assets/character_sprite_sheets/sherlock_frames.tres" id="2_rte7y"]
 [ext_resource type="Material" uid="uid://dfn5rpdbdrajg" path="res://levels/light/hide_out_of_range.tres" id="2_ywcaw"]
+[ext_resource type="AudioStream" uid="uid://bn5sndsrytf1t" path="res://assets/audio/sfx/walking.ogg" id="4_ywcaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vbj4"]
 size = Vector2(12, 12)
@@ -220,12 +221,13 @@ states/walk/position = Vector2(393, 169)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3gx1v"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_y5d0e"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_knoog"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_gtnks"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_khcyd"), "death", "End", SubResource("AnimationNodeStateMachineTransition_fyfjg")]
 graph_offset = Vector2(264.2075, 0)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1317433075 node_paths=PackedStringArray("animation_tree", "sprite")]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1317433075 node_paths=PackedStringArray("animation_tree", "player_sound", "sprite")]
 collision_mask = 17
 script = ExtResource("1_rte7y")
 speed = 80.0
 animation_tree = NodePath("AnimationTree")
 wall_walk_tolerance = 0.1
+player_sound = NodePath("Player Sounds")
 sprite = NodePath("PlayerSprite")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=72132033]
@@ -244,3 +246,8 @@ tree_root = SubResource("AnimationNodeStateMachine_gtnks")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/dead = false
 parameters/conditions/walking = false
+
+[node name="Player Sounds" type="AudioStreamPlayer" parent="." unique_id=1436376493]
+stream = ExtResource("4_ywcaw")
+
+[connection signal="finished" from="Player Sounds" to="." method="_on_player_sounds_finished"]
