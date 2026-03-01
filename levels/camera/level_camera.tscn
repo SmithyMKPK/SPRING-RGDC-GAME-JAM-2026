@@ -5,16 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://bfb8btfufy32u" path="res://levels/light/light_source.tscn" id="3_fmu8n"]
 [ext_resource type="Texture2D" uid="uid://cnckukbnp1eeo" path="res://assets/character_sprite_sheets/monocle.tres" id="4_5bsm2"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fmu8n"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5bsm2"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Level Camera" type="Camera2D" unique_id=1371421371]
+[node name="Level Camera" type="Camera2D" unique_id=1371421371 node_paths=PackedStringArray("spawn_grace_timer", "light_source")]
 zoom = Vector2(2, 2)
 script = ExtResource("1_wjito")
+spawn_grace_timer = NodePath("Timer")
+light_source = NodePath("LightSource")
 
 [node name="Waves" parent="." unique_id=1483759280 instance=ExtResource("2_5bsm2")]
-texture = SubResource("ViewportTexture_fmu8n")
+texture = SubResource("ViewportTexture_5bsm2")
 scale_fac = 0.1
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=31695934]
+current = true
 
 [node name="LightSource" parent="." unique_id=515451218 instance=ExtResource("3_fmu8n")]
 
@@ -22,3 +27,7 @@ scale_fac = 0.1
 z_index = 2
 position = Vector2(0, -3)
 texture = ExtResource("4_5bsm2")
+
+[node name="Timer" type="Timer" parent="." unique_id=434393265]
+wait_time = 0.4
+one_shot = true

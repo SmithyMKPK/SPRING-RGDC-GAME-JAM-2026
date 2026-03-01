@@ -1,5 +1,8 @@
 class_name PlayerMovement extends CharacterBody2D
 
+signal respawn();
+signal start_respawn();
+
 @export var speed: float = 150;
 @export var dead_zone: float = .06;
 
@@ -40,6 +43,7 @@ func _process(_delta: float) -> void:
 			playback.travel("idle");
 			self.respawning = false;
 			self.position = self.initial_pos;
+			self.respawn.emit();
 
 func _physics_process(delta: float) -> void:
 	if self.respawning:
@@ -78,8 +82,7 @@ func dead() -> void:
 	self.wall_walk_timer = 0;
 	self.respawning = true;
 	self.animation_tree.set("parameters/conditions/dead", true);
-	#self.position = initial_pos;
-
+	self.start_respawn.emit();
 
 func _on_player_sounds_finished() -> void:
 	self.is_walking_sound_on = false
