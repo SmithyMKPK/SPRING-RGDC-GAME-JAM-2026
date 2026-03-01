@@ -24,12 +24,14 @@ func _focus_change() -> void:
 	self.main_focus_target.focus_behavior_recursive = Control.FOCUS_BEHAVIOR_INHERITED if self_focusable else Control.FOCUS_BEHAVIOR_DISABLED;
 	if self_focusable:
 		self.default_button.grab_focus.call_deferred();
+@onready var _menu_sfx: AudioStreamPlayer = $"Menu sfx"
+
+## Acts on the play button being pressed
+func _on_play_button_pressed() -> void:
+	self._level_select_menu.visible = true
+	self._menu_sfx.play()
 
 ## Acts on the options button being pressed
 func _on_options_button_pressed() -> void:
 	self._options_menu.visible = true
-
-# NOTE: We can either make something goofy here, remove it, wtv
-## Acts on the quit button being pressed
-func _on_quit_button_pressed() -> void:
-	pass # Replace with function body.
+	self._menu_sfx.play()
