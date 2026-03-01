@@ -7,16 +7,14 @@ class_name MainMenu extends Control
 ## A reference to the level select menu
 @onready var _level_select_menu: Control = $"CenterContainer/Level Selection Menu"
 
+@onready var _menu_sfx: AudioStreamPlayer = $"Menu sfx"
 
 ## Acts on the play button being pressed
 func _on_play_button_pressed() -> void:
 	self._level_select_menu.visible = true
+	self._menu_sfx.play()
 
 ## Acts on the options button being pressed
 func _on_options_button_pressed() -> void:
 	self._options_menu.visible = true
-
-# NOTE: We can either make something goofy here, remove it, wtv
-## Acts on the quit button being pressed
-func _on_quit_button_pressed() -> void:
-	pass # Replace with function body.
+	self._menu_sfx.play()

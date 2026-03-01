@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccvmanekwtydl" path="res://menu_scenes/options_menu.tscn" id="3_0nmaq"]
 [ext_resource type="PackedScene" uid="uid://bpf71ifns3ocu" path="res://menu_scenes/level_select/level_selection_menu.tscn" id="4_xnuoq"]
 [ext_resource type="PackedScene" uid="uid://cilgo7ig7tufy" path="res://menu_scenes/main_background/main_menu_background.tscn" id="5_0nmaq"]
+[ext_resource type="AudioStream" uid="uid://c4i6inngcekka" path="res://assets/audio/sfx/click_sfx.ogg" id="6_xnuoq"]
 
 [node name="Main Menu" type="Control" unique_id=2037886259]
 layout_mode = 3
@@ -69,21 +70,19 @@ theme_override_fonts/font = ExtResource("1_dg02v")
 theme_override_font_sizes/font_size = 32
 text = "Options"
 
-[node name="Quit Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2076021367]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_dg02v")
-theme_override_font_sizes/font_size = 32
-text = "Quit"
-
-[node name="Options Menu" parent="CenterContainer" unique_id=496063839 instance=ExtResource("3_0nmaq")]
+[node name="Options Menu" parent="CenterContainer" unique_id=496063839 node_paths=PackedStringArray("_menu_sfx") instance=ExtResource("3_0nmaq")]
 visible = false
 layout_mode = 2
+_menu_sfx = NodePath("../../Menu sfx")
 
-[node name="Level Selection Menu" parent="CenterContainer" unique_id=493822413 instance=ExtResource("4_xnuoq")]
+[node name="Level Selection Menu" parent="CenterContainer" unique_id=493822413 node_paths=PackedStringArray("_menu_sfx") instance=ExtResource("4_xnuoq")]
 visible = false
 custom_minimum_size = Vector2(500, 340)
 layout_mode = 2
+_menu_sfx = NodePath("../../Menu sfx")
+
+[node name="Menu sfx" type="AudioStreamPlayer" parent="." unique_id=1133475746]
+stream = ExtResource("6_xnuoq")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Options Button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]
