@@ -8,6 +8,10 @@ class_name FollowCamera extends Camera2D
 
 func _ready() -> void:
 	self.internal_global_position = self.global_position;
+	
+	var f = func(camera: FollowCamera):
+		camera.internal_global_position = Player.current_position;
+	f.call_deferred(self);
 
 func _process(delta: float) -> void:
 	var target_position: Vector2 = self._get_target_global_position();
