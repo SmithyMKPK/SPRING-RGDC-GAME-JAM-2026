@@ -45,3 +45,9 @@ func enter_level(spawnpoint: Node2D) -> void:
 func exit_level() -> void:
 	#self._movable_character.collision_layer = 0;
 	self.remove_child(_movable_character)
+
+func get_death_signal() -> Signal:
+	return self._movable_character.start_respawn;
+
+func get_respawn_signal() -> Signal:
+	return self._movable_character.respawn;
