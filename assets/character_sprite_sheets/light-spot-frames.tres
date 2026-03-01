@@ -1,0 +1,91 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cu1vhpqvpmdoy"]
+
+[ext_resource type="Texture2D" uid="uid://dcslts5s4mi4q" path="res://assets/character_sprite_sheets/light-spot.png" id="1_br2ah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c33d4"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cuov"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hqcj"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dqis"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0my5p"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl86k"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obdtl"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_358ih"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5beyb"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87bo5"]
+atlas = ExtResource("1_br2ah")
+region = Rect2(512, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c33d4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cuov")
+}],
+"loop": true,
+"name": &"hold_light",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_6hqcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dqis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0my5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl86k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obdtl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_358ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5beyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87bo5")
+}],
+"loop": false,
+"name": &"light",
+"speed": 10.0
+}]
