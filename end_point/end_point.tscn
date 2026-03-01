@@ -5,6 +5,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgil7"]
 
 [node name="EndPoint" type="Area2D" unique_id=1374820303]
+collision_layer = 0
+monitoring = false
 script = ExtResource("1_j2h8x")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=483031782]

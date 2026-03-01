@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b2lq84t8v78gc"]
+
+[ext_resource type="Script" uid="uid://cly6wj6lik3r7" path="res://menu_scenes/level_finished_menu.gd" id="1_ti1u0"]
+[ext_resource type="FontFile" uid="uid://cnqy0ca0e0jj6" path="res://assets/typefaces/Cairopixel.ttf" id="3_v1jcd"]
+
+[node name="LevelFinishedMenu" type="CanvasLayer" unique_id=930334610]
+visible = false
+script = ExtResource("1_ti1u0")
+main_menu_scene = "res://menu_scenes/main_menu.tscn"
+
+[node name="Panel" type="Panel" parent="." unique_id=1844409732]
+offset_left = 240.0
+offset_top = 176.0
+offset_right = 560.0
+offset_bottom = 248.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=2003559183]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 72.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=703634126]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v1jcd")
+theme_override_font_sizes/font_size = 32
+text = "Level Complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer" unique_id=480792791]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1343401521]
+layout_mode = 2
+alignment = 1
+
+[node name="Restart Level Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1333454466]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v1jcd")
+text = "Restart Level"
+
+[node name="Main Menu Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=118093173]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v1jcd")
+text = "Main Menu"
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Restart Level Button" to="." method="_on_restart_level_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Main Menu Button" to="." method="_on_main_menu_button_pressed"]

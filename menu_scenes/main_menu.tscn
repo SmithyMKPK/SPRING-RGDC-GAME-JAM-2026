@@ -5,11 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ccvmanekwtydl" path="res://menu_scenes/options_menu.tscn" id="3_0nmaq"]
 [ext_resource type="PackedScene" uid="uid://bpf71ifns3ocu" path="res://menu_scenes/level_select/level_selection_menu.tscn" id="4_xnuoq"]
 [ext_resource type="PackedScene" uid="uid://cilgo7ig7tufy" path="res://menu_scenes/main_background/main_menu_background.tscn" id="5_0nmaq"]
-[ext_resource type="PackedScene" uid="uid://bb4nf1t7q628j" path="res://levels/level_tiles/level_1.tscn" id="6_q86ii"]
-[ext_resource type="PackedScene" uid="uid://censmn4x8ngpb" path="res://levels/level_tiles/level_2.tscn" id="7_rrbsy"]
-[ext_resource type="PackedScene" uid="uid://uvp512ldts47" path="res://levels/level_tiles/level_3.tscn" id="8_qaiaw"]
-[ext_resource type="PackedScene" uid="uid://delkpkiemnu1l" path="res://levels/level_tiles/level_4.tscn" id="9_6gg6d"]
-[ext_resource type="PackedScene" uid="uid://c1fcrch7hnvh8" path="res://levels/level_tiles/level_5.tscn" id="10_aki20"]
 
 [node name="Main Menu" type="Control" unique_id=2037886259]
 layout_mode = 3
@@ -88,7 +83,7 @@ layout_mode = 2
 visible = false
 custom_minimum_size = Vector2(500, 340)
 layout_mode = 2
-levels = Array[PackedScene]([ExtResource("6_q86ii"), ExtResource("7_rrbsy"), ExtResource("8_qaiaw"), ExtResource("9_6gg6d"), ExtResource("10_aki20")])
+levels = Array[String](["res://levels/level_tiles/level_1.tscn", "res://levels/level_tiles/level_2.tscn", "res://levels/level_tiles/level_3.tscn", "res://levels/level_tiles/level_4.tscn", "res://levels/level_tiles/level_5.tscn"])
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Options Button" to="." method="_on_options_button_pressed"]

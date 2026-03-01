@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfeya0g6tn2k2" path="res://levels/camera/level_camera.tscn" id="6_brbel"]
 [ext_resource type="PackedScene" uid="uid://btc7md5rfjjqr" path="res://light_node/light_node.tscn" id="8_nwu6r"]
 [ext_resource type="PackedScene" uid="uid://cpbi7f1dco0hi" path="res://spawn_point/spawn_point.tscn" id="9_0bjxk"]
+[ext_resource type="PackedScene" uid="uid://b2lq84t8v78gc" path="res://menu_scenes/level_finished_menu.tscn" id="10_2fumm"]
 [ext_resource type="PackedScene" uid="uid://cvs7kw4xr5of4" path="res://end_point/end_point.tscn" id="10_brbel"]
 
 [node name="Level1" type="Node2D" unique_id=1673126048]
@@ -36,3 +37,5 @@ position = Vector2(-131, -46)
 
 [node name="EndPoint" parent="." unique_id=1374820303 instance=ExtResource("10_brbel")]
 position = Vector2(80, -70)
+
+[node name="LevelFinishedMenu" parent="." unique_id=589850494 instance=ExtResource("10_2fumm")]
