@@ -16,4 +16,3 @@ texture = SubResource("ViewportTexture_wjito")
 scale_fac = 0.04
 
 [node name="LightSource" parent="." unique_id=515451218 instance=ExtResource("3_fmu8n")]
-strength = 150.0

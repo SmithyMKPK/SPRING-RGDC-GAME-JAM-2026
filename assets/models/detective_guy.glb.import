@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cv6ev8hg8d77n"
-path="res://.godot/imported/detective_guy.glb-3bc532011c236c5310d3d129678f130b.scn"
+path="res://.godot/imported/detective_guy.glb-c9c626e0b9acb3b40b9d058ecc60d9a3.scn"
 
 [deps]
 
-source_file="res://assets/character_sprite_sheets/detective_guy.glb"
-dest_files=["res://.godot/imported/detective_guy.glb-3bc532011c236c5310d3d129678f130b.scn"]
+source_file="res://assets/models/detective_guy.glb"
+dest_files=["res://.godot/imported/detective_guy.glb-c9c626e0b9acb3b40b9d058ecc60d9a3.scn"]
 
 [params]
 

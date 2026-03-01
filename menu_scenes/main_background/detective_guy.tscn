@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cc2ounhas6vv3"]
 
-[ext_resource type="PackedScene" uid="uid://cv6ev8hg8d77n" path="res://assets/character_sprite_sheets/detective_guy.glb" id="1_otvvg"]
-[ext_resource type="Texture2D" uid="uid://dndf3urb7d8y6" path="res://assets/character_sprite_sheets/detective_guy_monacle.png" id="2_a655y"]
+[ext_resource type="PackedScene" uid="uid://cv6ev8hg8d77n" path="res://assets/models/detective_guy.glb" id="1_otvvg"]
+[ext_resource type="Texture2D" uid="uid://dndf3urb7d8y6" path="res://assets/models/detective_guy_monacle.png" id="2_a655y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fch4y"]
 resource_name = "Material.001"

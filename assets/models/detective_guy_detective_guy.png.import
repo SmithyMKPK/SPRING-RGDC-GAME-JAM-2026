@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dndf3urb7d8y6"
-path.s3tc="res://.godot/imported/detective_guy_monacle.png-0e99e2cdb574e7286142ee9b016a1c53.s3tc.ctex"
+uid="uid://dcadxk71nmxrw"
+path.s3tc="res://.godot/imported/detective_guy_detective_guy.png-3da9830115230269b9fa7ead3cb356f8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "94f3a311cc4fdb428d9f6637006ff8a4"
+"md5": "3d189cb07c9b2763a53c4bc02d69e07b"
 }
 
 [deps]
 
-source_file="res://assets/character_sprite_sheets/detective_guy_monacle.png"
-dest_files=["res://.godot/imported/detective_guy_monacle.png-0e99e2cdb574e7286142ee9b016a1c53.s3tc.ctex"]
+source_file="res://assets/models/detective_guy_detective_guy.png"
+dest_files=["res://.godot/imported/detective_guy_detective_guy.png-3da9830115230269b9fa7ead3cb356f8.s3tc.ctex"]
 
 [params]
 
