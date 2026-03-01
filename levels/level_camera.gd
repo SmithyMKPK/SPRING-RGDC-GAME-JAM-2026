@@ -2,15 +2,17 @@ class_name FollowCamera extends Camera2D
 
 @export var delta_coefficient: float = 3.25;
 @export var internal_global_position: Vector2;
-@export var target_light_node: LightNode:
+@export var target_light_node: Node2D:
 	set(value):
 		if value == target_light_node:
 			return;
 		if target_light_node != null:
-			target_light_node.exit();
+			if target_light_node is LightNode:
+				target_light_node.exit();
 		target_light_node = value;
 		if target_light_node != null:
-			target_light_node.enter();
+			if target_light_node is LightNode:
+				target_light_node.enter();
 			
 @export var reset_on_phys_interpolation: bool = true;
 @export var snap_scale: float = 1;

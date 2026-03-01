@@ -30,7 +30,7 @@ tile_set = ExtResource("5_bjblp")
 position = Vector2(16, 0)
 
 [node name="Light Node" parent="." unique_id=356253661 instance=ExtResource("7_4ak1g")]
-position = Vector2(-168, 136)
+position = Vector2(-166, 123)
 
 [node name="Light Node2" parent="." unique_id=1280580234 instance=ExtResource("7_4ak1g")]
 position = Vector2(192, 136)
