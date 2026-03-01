@@ -2,6 +2,9 @@ extends CanvasLayer
 
 @export var main_menu_scene: String
 
+func _ready() -> void:
+	self.visible = false
+
 func _on_restart_level_button_pressed() -> void:
 	self.visible = false
 	get_tree().reload_current_scene();
