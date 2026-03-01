@@ -25,7 +25,7 @@ func _ready() -> void:
 ## Adds the moveable character to the scene tree
 func enter_level(spawnpoint: Node2D) -> void:
 	self.add_child(self._movable_character)
-	self._movable_character.global_position = spawnpoint.global_position;
+	self._movable_character.set_initial_position(spawnpoint.global_position)
 	self.z_index = spawnpoint.z_index;
 
 ## Removes the movable character to the scene tree
