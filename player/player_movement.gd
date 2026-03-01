@@ -23,10 +23,24 @@ var facing_left: bool = true:
 
 ## Sets the initial position of the player upon a level starting
 func set_initial_position(initial_position: Vector2) -> void:
+	self.respawning = false;
 	self.position = initial_position
 	self.initial_pos = initial_position
+#
+func _process(_delta: float) -> void:
+	if self.respawning:
+		var playback: AnimationNodeStateMachinePlayback = self.animation_tree.get("parameters/playback");
+		print(playback.get_current_node())
+		if playback.get_current_node() == "End":
+			self.animation_tree.set("parameters/conditions/dead", false);
+			playback.travel("idle");
+			self.respawning = false;
+			self.position = self.initial_pos;
 
 func _physics_process(delta: float) -> void:
+	if self.respawning:
+		return;
+	
 	var input_direction = Vector2(
 		Input.get_action_strength("Move Right") - Input.get_action_strength("Move Left"),
 		Input.get_action_strength("Move Down") - Input.get_action_strength("Move Up")
@@ -50,5 +64,10 @@ func _physics_process(delta: float) -> void:
 	if self.wall_walk_timer < 0:
 		self.dead();
 
+var respawning: bool = false;
+
 func dead() -> void:
-	self.position = initial_pos
+	self.wall_walk_timer = 0;
+	self.respawning = true;
+	self.animation_tree.set("parameters/conditions/dead", true);
+	#self.position = initial_pos;

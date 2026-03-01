@@ -45,6 +45,58 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerSprite:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_y5d0e"]
+resource_name = "death"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:modulate:a")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_ywcaw"]
 resource_name = "idle"
@@ -119,9 +171,13 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3gx1v"]
 _data = {
 &"RESET": SubResource("Animation_fyfjg"),
+&"death": SubResource("Animation_y5d0e"),
 &"idle": SubResource("Animation_ywcaw"),
 &"walk": SubResource("Animation_3gx1v")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3gx1v"]
+animation = &"death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fyfjg"]
 animation = &"idle"
@@ -140,13 +196,29 @@ advance_condition = &"walking"
 advance_mode = 2
 advance_expression = "!get(\"parameters/conditions/walking\")"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gtnks"]
+advance_mode = 2
+advance_condition = &"dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_khcyd"]
+advance_mode = 2
+advance_condition = &"dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fyfjg"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gtnks"]
+states/End/position = Vector2(729, 67)
 states/Start/position = Vector2(255, 76)
+states/death/node = SubResource("AnimationNodeAnimation_3gx1v")
+states/death/position = Vector2(551, 76)
 states/idle/node = SubResource("AnimationNodeAnimation_fyfjg")
 states/idle/position = Vector2(393, 76)
 states/walk/node = SubResource("AnimationNodeAnimation_ywcaw")
 states/walk/position = Vector2(393, 169)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3gx1v"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_y5d0e"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_knoog")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3gx1v"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_y5d0e"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_knoog"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_gtnks"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_khcyd"), "death", "End", SubResource("AnimationNodeStateMachineTransition_fyfjg")]
+graph_offset = Vector2(264.2075, 0)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1317433075 node_paths=PackedStringArray("animation_tree", "sprite")]
 collision_mask = 17
@@ -170,4 +242,5 @@ libraries/ = SubResource("AnimationLibrary_3gx1v")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1570903182]
 tree_root = SubResource("AnimationNodeStateMachine_gtnks")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/dead = false
 parameters/conditions/walking = false
