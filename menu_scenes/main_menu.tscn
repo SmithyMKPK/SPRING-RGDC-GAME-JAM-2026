@@ -83,7 +83,6 @@ layout_mode = 2
 visible = false
 custom_minimum_size = Vector2(500, 340)
 layout_mode = 2
-levels = Array[String](["res://levels/level_tiles/level_1.tscn", "res://levels/level_tiles/level_2.tscn", "res://levels/level_tiles/level_3.tscn", "res://levels/level_tiles/level_4.tscn", "res://levels/level_tiles/level_5.tscn"])
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Options Button" to="." method="_on_options_button_pressed"]

@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cnueyiygti43h" path="res://player/player.gd" id="1_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://ctfegbv4gvfln" path="res://player/moveable_character.tscn" id="2_rkbax"]
+[ext_resource type="AudioStream" uid="uid://d0f5vurjqnr1c" path="res://assets/audio/themes/level_theme.ogg" id="2_yw30f"]
+[ext_resource type="AudioStream" uid="uid://dq8ndd65yieob" path="res://assets/audio/themes/main_menu_theme.ogg" id="3_qjkh3"]
 
 [node name="Player" type="Node2D" unique_id=2013226034]
 script = ExtResource("1_g1dw6")
+_background_music = {
+&"Level Theme": ExtResource("2_yw30f"),
+&"Main Menu Theme": ExtResource("3_qjkh3")
+}
 
 [node name="Moveable Character" parent="." unique_id=1317433075 instance=ExtResource("2_rkbax")]
 

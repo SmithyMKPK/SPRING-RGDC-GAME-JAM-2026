@@ -12,3 +12,4 @@ func _on_restart_level_button_pressed() -> void:
 func _on_main_menu_button_pressed() -> void:
 	self.visible = false
 	self.get_tree().change_scene_to_file(self.main_menu_scene)
+	Player.in_level = false
